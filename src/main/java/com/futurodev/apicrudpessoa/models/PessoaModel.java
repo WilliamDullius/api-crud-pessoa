@@ -31,6 +31,6 @@ public class PessoaModel implements Serializable{
 	public LocalDate dataNascimento;
 	
 	@Getter @Setter
-	public LocalTime horaNascimento;
+	public LocalTime horaNascimento = LocalTime.MIN;
 
 }
