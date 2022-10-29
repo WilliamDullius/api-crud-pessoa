@@ -30,7 +30,7 @@ public class PessoaController {
 		return new ResponseEntity<PessoaModel>(retorno, HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/buscarPessoa")
+	@GetMapping("/buscarPessoa") //BUSCA PESSOA PELO id REQUISITADO NO BODY DA REQUISIÇÃO
 	public ResponseEntity<PessoaModel> buscarPessoa (@RequestParam Long id){
 		PessoaModel retorno = pessoaRepository.findById(id).get();
 		return new ResponseEntity<PessoaModel>(retorno, HttpStatus.OK);
@@ -49,7 +49,7 @@ public class PessoaController {
 	}	
 	
 	@GetMapping("/buscarPorNome")
-	public ResponseEntity<List<PessoaModel>> buscaPessoaByName (@RequestParam (name = "nome") String nome){
+	public ResponseEntity<List<PessoaModel>> buscaPessoaByName (@RequestParam String nome){
 		List<PessoaModel> retorno = pessoaRepository.getPessoaByName(nome);
 		return new ResponseEntity<List<PessoaModel>>(retorno, HttpStatus.OK);
 	}

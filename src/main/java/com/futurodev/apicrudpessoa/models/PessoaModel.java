@@ -28,7 +28,7 @@ public class PessoaModel implements Serializable{
 	public String nome, email, estado, cidade, logradouro, cep;
 	
 	@Getter @Setter
-	public LocalDate dataNascimento;
+	public LocalDate dataNascimento = LocalDate.MIN;
 	
 	@Getter @Setter
 	public LocalTime horaNascimento = LocalTime.MIN;
